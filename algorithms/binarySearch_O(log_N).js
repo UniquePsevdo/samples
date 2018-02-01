@@ -1,3 +1,5 @@
+const arr = [8, 87, 3, 0, -12, 88, 4351, 0.7];
+
 var binarySearch = function(array, value) {
     var guess,
         min = 0,
@@ -15,3 +17,5 @@ var binarySearch = function(array, value) {
 
     return -1;
 }
+
+console.log(binarySearch(arr, 0));
