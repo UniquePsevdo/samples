@@ -11,7 +11,10 @@
     "babel-preset-stage-2": "^6.24.1"
   },
   "scripts": {
-    "test": "ava **/*.js",
+    "test_algorythms": "ava algorithms/*.js",
+    "test_easy": "ava easy/*.js",
+    "test_middle": "ava middle/*.js",
+    "test_harder": "ava harder/*.js",
     "templ": "babel-node templ.js --presets es2015,stage-2"
   },
   "repository": {

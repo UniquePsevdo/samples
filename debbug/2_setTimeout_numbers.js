@@ -1,6 +1,10 @@
-for (var i = 0; i < 4; i++) {
-    let j = i;
-    (()=>{
-        setTimeout(() => console.log(j), 0)
-    })(j)
+for (var i = 0; i < 10; i++) {
+    var temp = function(){
+        return function(i){
+            setTimeout(()=>{
+                console.log(i)
+            }, i*1000)
+        }
+    }();
+    temp(i);
 }

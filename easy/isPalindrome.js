@@ -1,11 +1,11 @@
 function isPalindrome(str){
-    let strArr = str.split('');
-    for(let i=0; i < strArr.length; i++){
-        if(strArr[i]!==strArr[strArr.length -1 - i]){
+    let arr = str.split('');
+    for(let i =0; i < arr.length; i++){
+        if(arr[i] !== arr[arr.length-1-i]){
             return false
         }
     }
-    return true
+    return true;
 }
 
 import {test} from 'ava'
