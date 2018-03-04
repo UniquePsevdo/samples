@@ -18,18 +18,20 @@ function intersect(arr1, arr2){
 */
 
 function intersect(arr1, arr2){
-    let seen = {}
-    arr1.reduce((acc, curr)=>{
-        seen[curr] = true
-        return seen
+    let seen = arr1.reduce((acc, curr)=>{
+        if(!acc[curr]){
+            acc[curr]=true;
+        }
+        return acc;
     }, {})
-
     return arr2.reduce((acc, curr)=>{
         if(seen[curr]){
-            acc.push(curr)
+            acc.push(curr);
         }
-        return acc
+        return acc;
     }, [])
+
+
 }
 
 import {test} from 'ava'

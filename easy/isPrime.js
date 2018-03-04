@@ -1,10 +1,10 @@
 function isPrime(val){
     if(val < 2){
-        return false
+        return false;
     }
-    for(let i = 2; i < Math.ceil(Math.sqrt(val)); i++){
-        if(val % i===0 || i!==val){
-            return false;
+    for(let i = 2; i < Math.ceil(Math.sqrt(val))+1; i++){
+        if(val%2===0 && i!==val){
+            return false
         }
     }
     return true;

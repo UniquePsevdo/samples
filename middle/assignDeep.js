@@ -1,3 +1,4 @@
+/*
 function assignDeep(target, ...sources){
     for(let source of sources){
         for( let key in source){
@@ -13,9 +14,26 @@ function assignDeep(target, ...sources){
     }
     return target
 }
+*/
+
+function assignDeep(target, ...sources){
+    for(let source of sources){
+        for(let key in source){
+            if(isObject(source[key])){
+                if(!isObject(target[key])){
+                    target[key] = {}
+                }
+                return assignDeep(target[key], source[key])
+            }else{
+                target[key] = source[key];
+            }
+        }
+    }
+    return target;
+}
 
 function isObject(obj){
-    return typeof obj === 'object' && obj !== null
+    return (typeof obj === 'object' && obj !== null)
 }
 
 import {test} from 'ava'

@@ -17,3 +17,8 @@ function sayHi(event) {
 // Start
 const throttled = throttle(sayHi, 500);
 //window.addEventListener('mousemove', throttled);
+
+import {test} from 'ava';
+test(t => {
+    t.is(1, 1);
+})

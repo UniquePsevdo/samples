@@ -1,4 +1,4 @@
-function sort(arr){
+/*function sort(arr){
     if(arr.length < 2){
         return arr
     }
@@ -21,6 +21,30 @@ function merge(left, right){
         )
     }
     return result.concat(left.slice(leftIdx)).concat(right.slice(rightIdx))
+}*/
+
+function sort(arr){
+    if(arr.length < 2){
+        return arr;
+    }
+    let mid = Math.floor(arr.length / 2);
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid);
+    return merge(sort(left), sort(right))
+}
+
+function merge(left, right){
+    let result = [];
+    let leftIdx = 0;
+    let rightIdx = 0;
+    while(leftIdx < left.length && rightIdx < right.length){
+        result.push(
+            left[leftIdx] < right[rightIdx] ?
+            left[leftIdx++]:
+            right[rightIdx++]
+        )
+    }
+    return result.concat(left.slice(leftIdx), right.slice(rightIdx));
 }
 
 import {test} from 'ava'

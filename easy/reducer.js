@@ -1,8 +1,17 @@
+/*
 function reduce(arr, fn, val){
     for(let i=0; i < arr.length; i++){
         val = fn(val, arr[i], i, arr)
     }
     return val
+}
+*/
+
+function reduce(arr, fn, val){
+    for(let i =0; i < arr.length; i++){
+        val = fn(val, arr[i])
+    }
+    return val;
 }
 
 import {test} from 'ava'
