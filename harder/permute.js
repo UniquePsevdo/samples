@@ -1,4 +1,4 @@
-function permute(str){
+/*function permute(str){
     return permuteArr(str.split(''))
 }
 
@@ -17,6 +17,27 @@ function permuteArr(arr){
         return arr
     }
     return flatten(arr.map(a => permuteArr(without(arr, a)).map((b)=>a.concat(b))))
+}*/
+
+function permute(str){
+    return permuteArr(str.split(''));
+}
+
+function without(arr, a){
+    let result = [...arr];
+    result.splice(arr.indexOf(a), 1);
+    return result;
+}
+
+function flatten(arr){
+    return arr.reduce((acc, curr)=>[...acc, ...curr], []);
+}
+
+function permuteArr(arr){
+    if(arr.length < 2){
+        return arr
+    }
+    return flatten(arr.map((a)=>permuteArr(without(arr, a)).map((b)=>a.concat(b))))
 }
 
 // tests

@@ -13,12 +13,12 @@ function uniq(arr){
 
 function uniq(arr){
     let seen = {};
-    return arr.reduce((acc, current)=>{
-        if(!seen[current]){
-            acc.push(current)
-            seen[current]=true
+    return arr.reduce((acc, curr)=>{
+        if(!seen[curr]){
+            seen[curr] = true;
+            acc.push(curr)
         }
-        return acc
+        return acc;
     }, [])
 }
 
