@@ -1,4 +1,4 @@
-function throttle(fn, delay=100){
+/*function throttle(fn, delay=100){
     let timer = null;
     return (...args)=>{
         if(!timer){
@@ -8,6 +8,21 @@ function throttle(fn, delay=100){
             }, delay)
         }
     }
+}*/
+
+function throttle(fn, delay){
+    let timer = null;
+
+    return(...args)=>{
+        if(!timer){
+            timer = setTimeout(()=>{
+                fn.call(this, args)
+                timer = null;
+            }, delay)
+
+        }
+    }
+
 }
 
 function sayHi(event) {

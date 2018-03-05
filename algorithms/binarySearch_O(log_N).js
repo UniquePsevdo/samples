@@ -20,17 +20,17 @@ function bs(arr, val){
 */
 
 function bs(arr, val){
-    let guess;
     let min = 0;
-    let max = arr.length - 1;
+    let max = arr.length-1;
+    let guess;
     while(min <= max){
-        guess = Math.floor((min + max)/2);
+        guess =Math.floor((min + max)/2);
         if(arr[guess]===val){
             return guess;
-        }else if(arr[guess] < val){
-            min = guess + 1;
+        }else if(arr[guess]<val){
+            min = guess+1;
         }else{
-            max = guess - 1;
+            max = guess -1;
         }
     }
     return -1;
