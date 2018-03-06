@@ -16,8 +16,8 @@ function bs(arr){
 */
 
 function bs(arr){
-    for(let i = arr.length - 1; i > 1; i--){
-        for(let j = 0 ; j < i; j++){
+    for(let i = arr.length-1; i > 1; i--){
+        for(let j = 0; j < i; j++){
             if(arr[j]>arr[j+1]){
                 let temp = arr[j];
                 arr[j] = arr[j+1];

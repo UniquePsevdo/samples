@@ -21,11 +21,10 @@ function debounce(fn, delay){
     let last = {
         time: null,
         timerId: null
-    }
-
+    };
     return ()=>{
         let time = Date.now();
-        if(last.time && (time - last.time)< delay){
+        if(last.time && (time - last.time) < delay){
             clearTimeout(last.timerId)
         }
         last = {
